@@ -1,0 +1,7 @@
+.navbar img {
+    max-height: 80px;
+}
+.article {
+    border: 2px solid #d1d1d1;
+    border-radius: 5px;
+}

@@ -5,7 +5,8 @@ $database = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB, DB_USER, DB_PASSW
 // on inclus notre contrôleur
 require_once '../app/controllers/ArticleController.php';
 $controller = new ArticleController($database);
-// On "casse" l'URL demandée pour être sûr de n'avoir que le chemin et pas les paramètres. Exemple : "/delete?id_article=2" deviendra "/delete"
+// On "casse" l'URL demandée pour être sûr de n'avoir que le chemin et pas les paramètres. 
+// Exemple : "/delete?id_article=2" deviendra "/delete"
 $request_uri = explode("?", $_SERVER['REQUEST_URI']);
 // Ici on utilise un switch pour dispatcher les différentes routes : 
 // Chaque action sur ce projet enverra une différente donnée en URI
