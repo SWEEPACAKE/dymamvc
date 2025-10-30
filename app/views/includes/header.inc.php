@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg shadow-lg">
+        <nav class="navbar navbar-expand-lg shadow-lg bg-light">
             <div class="container">
                 <!-- Élément N°1 -->
                 <a href="/">

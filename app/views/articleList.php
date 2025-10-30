@@ -16,7 +16,14 @@ include('includes/header.inc.php');
             ?>
             <div class="col-12 col-md-6 col-lg-4 my-3">
                 <div class="article text-center p-4">
-                    <?= htmlspecialchars($article['titre']); ?>
+                    <?php 
+                    if($article['photo_intro'] != NULL) {
+                        ?>
+                        <img src="<?= $article['photo_intro'] ?>" class="img-fluid"/>
+                        <?php
+                    }
+                    ?>
+                    <h4><?= htmlspecialchars($article['titre']); ?></h4>
                     <p><?= htmlspecialchars($article['contenu']) ?></p>
                     <a class="btn btn-sm btn-danger" href="/delete?id_article=<?= $article['id'] ?>">Supprimer</a>
                 </div>

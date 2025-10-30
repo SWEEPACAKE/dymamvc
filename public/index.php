@@ -18,7 +18,7 @@ switch($request_uri[0]) {
         break;
     case "/add" : 
         // Cas où l'URI  est /add
-        $controller->addArticle($_POST['articleTitre'], $_POST['articleContenu']);
+        $controller->addArticle($_POST['articleTitre'], $_POST['articleContenu'], $_FILES['photo_intro']);
         break;
     default: 
         // Comportement par défaut

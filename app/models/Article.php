@@ -15,16 +15,17 @@ class Article {
 
     // Cette fonction permet de lister tous les articles de la base
     public function getAllArticles() {
-        $stmt = $this->db->prepare("SELECT * FROM article");
+        $stmt = $this->db->prepare("SELECT * FROM article ORDER BY id DESC");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Cette fonction permet d'insérer un article dans la base à l'aide des données passées par le contrôleur
-    public function requeteInsertArticle($articleTitre, $articleContenu) {
-        $stmt = $this->db->prepare("INSERT INTO article  (titre, contenu) VALUES (:titre, :contenu)");
+    public function requeteInsertArticle($articleTitre, $articleContenu, $articlePhotoIntro) {
+        $stmt = $this->db->prepare("INSERT INTO article  (titre, contenu, photo_intro) VALUES (:titre, :contenu, :photo_intro)");
         $stmt->bindParam(':titre', $articleTitre);
         $stmt->bindParam(':contenu', $articleContenu);
+        $stmt->bindParam(':photo_intro', $articlePhotoIntro);
         $stmt->execute();
     }
 

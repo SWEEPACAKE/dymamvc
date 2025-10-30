@@ -23,8 +23,25 @@ class ArticleController {
 
     // Cette fonction est appelée dans le cas /add du switch. 
     // Elle demande au modèle de gérer l'insertion d'un article
-    public function addArticle($articleTitre, $articleContenu) {
-        $this->articleModel->requeteInsertArticle($articleTitre, $articleContenu);
+    public function addArticle($articleTitre, $articleContenu, $articlePhotoIntro) {
+        // On vérifie si le fichier uploadé est bien une image
+        // En testant si son type MIME commence par "image/"
+        if(substr($articlePhotoIntro['type'], 0, 6) == "image/") {
+            // Cas où l'on a bien uploadé une image
+
+            // On copie le fichier depuis la mémoire du serveur 
+            // vers un emplacement physique
+            move_uploaded_file($articlePhotoIntro['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/images/" . $articlePhotoIntro['name']);
+
+            // Puis on récupère son nom pour construire 
+            // le chemin vers ce fichier
+            $cheminDefinitif = "/images/" . $articlePhotoIntro['name'];
+        } else {
+            // Cas où l'on a uploadé autre chose qu'une image, 
+            // ou alors rien du tout donc on laisse le chemin à NULL
+            $cheminDefinitif = NULL;
+        }
+        $this->articleModel->requeteInsertArticle($articleTitre, $articleContenu, $cheminDefinitif);
         header('Location: /');
     }
 

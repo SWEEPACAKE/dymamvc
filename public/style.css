@@ -1,7 +1,28 @@
+:root {
+    --couleur-primaire: #ddad4a;
+    --bordures: #d1d1d1;
+    --image-background-site: url('/images/background.jpg');
+}
 .navbar img {
     max-height: 80px;
 }
+body {
+    background-image: var(--image-background-site);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .article {
-    border: 2px solid #d1d1d1;
+    border: 2px solid var(--bordures);
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-primary {
+    background-color: var(--couleur-primaire) !important;
+    border-color: var(--couleur-primaire) !important;
+}
+
+.thumbnail img {
+    max-width: 80px;
+    margin: 10px;
 }
