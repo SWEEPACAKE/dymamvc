@@ -1,4 +1,5 @@
 <?php
+// Un petit bonjour pour commencer
 // Inclusions des constantes DB, DB_HOST etc... pour authentifier la connexion à la base
 require_once '../config/database.php';
 $database = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB, DB_USER, DB_PASSWORD);
