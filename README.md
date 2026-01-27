@@ -28,4 +28,4 @@ Une fois la VM démarrée, reprendre le fichier config/dump-dymamvc.sql et l'imp
 
 ## Démarrer
 
-Une fois la VM lancée et la base de donnée créée, vous devriez avoir accès à [http://dymamvc.loc](http://)
+Une fois la VM lancée et la base de donnée créée, vous devriez avoir accès à [http://dymamvc.loc]([http://dymamvc.loc)
